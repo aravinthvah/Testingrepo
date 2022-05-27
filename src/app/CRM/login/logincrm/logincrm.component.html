@@ -1,0 +1,26 @@
+<div class="login-container">
+    <div class="login-content">
+        <mat-toolbar class="login-toolbar"  style="font-family: 'Courgette', cursive;font-weight: bold;font-size: 30px;margin-top:-44px">CRM</mat-toolbar>
+        <mat-card>
+        <form [formGroup]="loginForm" novalidate >
+          <mat-form-field>
+            <mat-icon matPrefix>person_outline</mat-icon>
+            <input autofocus type="text" matInput placeholder="Username" formControlName="username">
+          </mat-form-field>
+  
+          <mat-form-field>
+            <mat-icon matPrefix>lock_outline</mat-icon>
+            <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-icon matPrefix>add_business</mat-icon>
+            <input type="text" autocomplete="false" matInput placeholder="Company Name" formControlName="company">
+          </mat-form-field>
+  
+  
+          <button type="submit" mat-raised-button id="login_button" (click)="submit()">Login</button>
+        </form>
+      </mat-card>
+    </div>
+  </div>
