@@ -34,6 +34,7 @@ export class LogincrmComponent implements OnInit {
 				'password': this.loginForm.value.password,
 				'db': this.loginForm.value.company,
 			}
+			console.log(loginData)
 
 			this._loginService.login(loginData).subscribe(
 				(data:any) => {
