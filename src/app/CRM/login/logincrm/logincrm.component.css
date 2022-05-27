@@ -1,0 +1,48 @@
+.login-container {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    
+      background: url("../../../../assets/images/wave.svg")no-repeat center center;
+      background-size: cover;
+       background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #login_button{
+    background-color: salmon;color: white;
+  }
+  .login-toolbar{
+    background-color: #24D3CE !important;
+    color:white;
+
+  }
+  form {
+    width: 100%;
+  }
+  
+  .login-content {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .login-toolbar {
+    justify-content: center;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    display: block;
+    line-height: 0.8;
+  }
+  
+  .mat-raised-button {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .custom-spinner-color {
+    stroke:black;
+  }

@@ -1,0 +1,92 @@
+
+<mat-drawer-container class="example-container" autosize>
+
+  <mat-toolbar  color="primary" *ngIf="router.url!='/'" class="example-toolbar">
+      <button mat-icon-button (click)="drawer.toggle() " (click)="roles()"><mat-icon>menu</mat-icon></button>
+      <span style="width: 100%;"><h1 class="example-app-name">
+        <img src="../assets/images/citizen.jpeg"  id="citizen"> 
+        <p id="header_allolab" style="font-family: 'Courgette', cursive;font-weight: bold;font-size: 30px;margin-top:-44px">Citizen</p>
+      </h1>
+       </span>
+      <span class="example-spacer"></span>
+
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="logout()">
+      <mat-icon >logout</mat-icon>
+    </button>
+
+  </mat-toolbar>
+  <mat-drawer #drawer class="example-sidenav " mode="over">
+      <mat-toolbar  color="primary" *ngIf="router.url!='/'" >
+         Citizen
+      </mat-toolbar>
+
+      <mat-nav-list *ngIf="router.url!='/'">
+         <details>
+            <summary class="main-menu">
+               <img src="../assets/images/dashboard.jpg" style="margin-right: 10px;vertical-align: middle;"
+                  width="25px">  Dashboard</summary>
+            <ul>
+               <li> 
+                <a class="linkroute" [routerLink]="['/dashboard']">
+                  <mat-icon style="margin-right: 7px;vertical-align: middle;">dashboard</mat-icon>
+                  Dashboard 
+               </a></li>
+               </ul>
+          </details>
+
+          <details>
+            <summary class="main-menu">
+               <img src="../assets/images/create.png" style="margin-right: 14px;vertical-align: middle;"
+                width="25px">Create a Ticket</summary>
+            <ul>
+               <li> 
+                <a class="linkroute" [routerLink]="['/createticket/create']" >
+                  <mat-icon style="margin-right: 7px;vertical-align: middle;">create</mat-icon>
+                  Create 
+               </a>
+               </li>
+           
+               <li> 
+                  <a class="linkroute" [routerLink]="['/createticket/list']" >
+                    <mat-icon style="margin-right: 7px;vertical-align: middle;">list</mat-icon>
+                    Ticket List
+                 </a>
+                 </li>
+                 <li  *ngIf="role=='admin' || role=='committee'"  > 
+                  <a class="linkroute" [routerLink]="['/createticket/listall']" >
+                    <mat-icon style="margin-right: 7px;vertical-align: middle;">list_alt</mat-icon>
+                    Ticket List All
+                 </a>
+                 </li>
+                  
+                  
+            </ul>
+          </details>
+
+<details>
+   <summary class="main-menu">
+      <img src="../assets/images/config.png" style="margin-right: 10px;vertical-align: middle;"
+                width="25px">Settings</summary>
+   <ul>
+      <li> 
+       <a class="linkroute" [routerLink]="['/config/user-profile']">
+         <mat-icon style="margin-right: 7px;vertical-align: middle;">manage_accounts</mat-icon>
+         Profile
+      </a>
+      </li>
+      <li> 
+         <a class="linkroute" [routerLink]="['/config
+         /hospital']">
+           <mat-icon style="margin-right: 7px;vertical-align: middle;">admin_panel_settings</mat-icon>
+            Config 
+        </a>
+      </li>
+   </ul>
+ </details>
+<!-- Config-->
+      </mat-nav-list>
+  </mat-drawer>
+
+  <router-outlet></router-outlet>
+
+</mat-drawer-container>
